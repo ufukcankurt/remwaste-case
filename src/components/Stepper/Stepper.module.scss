@@ -1,0 +1,133 @@
+.stepperContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1280px;
+  margin: 20px auto;
+  padding: 0 20px;
+  position: relative;
+  overflow: scroll;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  flex: 1;
+  cursor: not-allowed;
+
+  .iconWrapper {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+    background-color: var(--stepper-icon-default-bg);
+    transition: background-color 0.3s ease;
+    border: none;
+  }
+
+  .iconBackground {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: inherit;
+  }
+
+  .icon {
+    color: var(--stepper-icon-color-default);
+    font-size: 24px;
+    background-color: inherit;
+  }
+
+  .label {
+    font-size: 14px;
+    color: var(--stepper-label-default-color);
+    margin-top: 5px;
+    max-width: 120px;
+  }
+
+  &.completed {
+    cursor: pointer;
+    .iconWrapper {
+      background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+    }
+    .label {
+      color: var(--text-primary);
+    }
+    .icon {
+      color: var(--stepper-icon-color-accent);
+    }
+  }
+
+  &.active {
+    cursor: pointer;
+    .iconWrapper {
+      background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+    }
+    .label {
+      color: var(--text-primary);
+      font-weight: bold;
+    }
+    .icon {
+      color: var(--stepper-icon-color-accent);
+    }
+  }
+}
+
+.connector {
+  height: 4px;
+  background-color: var(--connector-default-bg);
+  flex-grow: 1;
+  margin: 23px 0;
+  position: relative;
+  top: 0;
+  min-width: 160px;
+
+  &.connectorActive {
+    background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+  }
+}
+
+@media (max-width: 767px) {
+  .stepperContainer {
+    padding: 0 4px;
+    padding-bottom: 1rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+  .step {
+    min-width: 56px;
+    .iconWrapper {
+      width: 36px;
+      height: 36px;
+      margin-bottom: 6px;
+    }
+    .icon {
+      font-size: 18px;
+    }
+    .label {
+      font-size: 12px;
+      max-width: 70px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  .connector {
+    min-width: 36px;
+    height: 2px;
+    margin: 16px 0;
+  }
+}
