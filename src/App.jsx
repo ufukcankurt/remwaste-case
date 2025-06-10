@@ -1,11 +1,14 @@
-function App() {
+import React from 'react';
+import SkipSelection from "./pages/SkipSelection/SkipSelection";
+import ThemeToggleButton from './components/ThemeToggleButton/ThemeToggleButton';
 
+function App() {
   return (
     <>
-      <h1>Remwaste Case</h1>
-      <p>Remwaste Case</p>
+      <ThemeToggleButton />
+      <SkipSelection />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
