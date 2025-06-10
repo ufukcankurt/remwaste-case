@@ -9,11 +9,11 @@ export default function SkipCard({ skip, isSelected, onSelect }) {
       className={`
         bg-[var(--content-background)]
         text-[var(--text-primary)] 
-        p-2 pb-3 rounded-3xl shadow-md overflow-hidden
+        p-2 pb-3 rounded-3xl shadow-xl overflow-hidden
         flex flex-col
         cursor-pointer
         border-2 ${isSelected ? 'border-blue-600' : 'border-transparent'}
-        hover:shadow-xl
+        hover:shadow-2xl
         hover:border-blue-400
         transition-all duration-200 ease-in-out
         ${isSelected ? 'scale-105 z-10' : 'scale-100'}

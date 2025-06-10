@@ -13,7 +13,7 @@ export default function SummaryCard({ selectedSkip, setSelectedSkip }) {
         bg-[var(--content-background)] text-[var(--text-primary)]
         flex flex-col items-center
         border-[var(--border-color)]
-        shadow-lg
+        shadow-2xl
         z-10 p-2
         rounded-md overflow-hidden
       '

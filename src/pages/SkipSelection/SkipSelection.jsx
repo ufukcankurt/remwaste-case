@@ -43,7 +43,7 @@ function SkipSelection() {
       {loading ? (
         <Loading />
       ) : (
-        <div className={`${styles.container} px-6 ${isMobile ? 'pb-48' : ''}`}>
+        <div className={`${styles.container} px-6 pb-12 ${isMobile ? 'pb-48' : ''}`}>
           <div className='w-full'>
             <Stepper steps={BOOKING_STEPS_CONFIG} currentStep={currentBookingStep} />
 
